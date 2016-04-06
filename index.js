@@ -29,7 +29,7 @@ server.on('clientConnected', function(client) {
 // fired when a message is received
 server.on('published', function(packet, client) {
   console.log('Published', packet.topic, packet.payload);
-  var apiKeyRegex = /things\/measurements\/([A-Za-z0-9-_]+)/
+  var apiKeyRegex = /sensors\/([A-Za-z0-9-_]+)/
   var apiKeyMatch = packet.topic.match(apiKeyRegex);
   if(apiKeyMatch != null) {
     var apiKey = apiKeyMatch[1];
